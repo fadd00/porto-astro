@@ -12,6 +12,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.1.8"
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/react": "^5.0.3",
+    "@libsql/client": "^0.17.2",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^6.1.8",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "resend": "^6.12.1",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3"
   }
 }

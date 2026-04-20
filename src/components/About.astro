@@ -1,0 +1,121 @@
+---
+// Static Astro component - About section
+const skills = [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Tailwind CSS",
+    "SQL",
+    "MySQL",
+    "PHP",
+    "Laravel",
+    "Firebase",
+    "Godot",
+    "C",
+    "C#",
+    "Bun",
+    "ElysiaJS",
+    "Turso",
+];
+---
+
+<section id="about" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2
+                class="text-3xl md:text-4xl font-bold text-center mb-12 text-white"
+            >
+                My <span class="text-rose-400">Story</span>
+            </h2>
+
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+                        Konnichiwa! I'm just your everyday code isekai
+                        protagonist, turning coffee into web magic faster than a
+                        shounen hero powers up. I don't just write code; I cast
+                        spells on the digital realm, and it bends to my will. My
+                        specialty is creating websites with technologies
+                        straight out of a sci-fi anime.
+                    </p>
+
+                    <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+                        When I'm not grinding on my latest project, you can find
+                        me contemplating the philosophy of bugs, arguing with my
+                        AI waifu about the true meaning of `null`, or slapping
+                        more anime stickers on my rig—each one a power-up for my
+                        coding abilities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8 text-white">
+                    The Current <span class="text-rose-400">Stack We Use</span>
+                </h3>
+                <div
+                    class="bg-gray-800 p-6 rounded-lg border border-gray-700 text-center"
+                >
+                    <p class="text-gray-300 leading-relaxed">
+                        This portfolio is built using modern and powerful technologies to ensure it is blazing fast and reliable. Here is the current stack we use:
+                    </p>
+                    <ul
+                        class="mt-4 space-y-2 text-gray-400 list-none text-left max-w-md mx-auto"
+                    >
+                        <li>
+                            <span class="text-rose-400 font-semibold"
+                                >Framework:</span
+                            > Powered by <span class="font-medium text-white"
+                                >Astro & React</span
+                            >, blending SSG performance with interactive islands.
+                        </li>
+                        <li>
+                            <span class="text-rose-400 font-semibold"
+                                >Styling:</span
+                            > Painted with <span class="font-medium text-white"
+                                >Tailwind CSS</span
+                            >, keeping the UI slick and developer experience fast.
+                        </li>
+                        <li>
+                            <span class="text-rose-400 font-semibold"
+                                >Language:</span
+                            > Written in <span class="font-medium text-white"
+                                >TypeScript</span
+                            >, for type safety and rock-solid autocomplete.
+                        </li>
+                        <li>
+                            <span class="text-rose-400 font-semibold"
+                                >Database:</span
+                            > Connected to <span class="font-medium text-white"
+                                >Turso (libSQL)</span
+                            >, managing the live guestbook seamlessly.
+                        </li>
+                        <li>
+                            <span class="text-rose-400 font-semibold"
+                                >Mailing Service:</span
+                            > Hooked up with <span class="font-medium text-white"
+                                >Resend</span
+                            >, handling messages directly from the contact form.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8 text-white">
+                    My <span class="text-rose-400">Skill Tree</span>
+                </h3>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    {
+                        skills.map((skill) => (
+                            <span class="px-3 py-1 bg-rose-400/10 text-rose-400 rounded-full text-sm border border-rose-400/20">
+                                {skill}
+                            </span>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

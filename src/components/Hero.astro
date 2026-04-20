@@ -1,0 +1,59 @@
+---
+// Astro wrapper for Hero section
+// Import the image
+import { Image } from "astro:assets";
+import profilePic from "../assets/andhika-hutama.jpeg";
+import HeroButtons from "./HeroButtons";
+---
+
+<section
+    class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-4 pt-24"
+>
+    <div class="text-center max-w-4xl mx-auto">
+        <div class="mb-8">
+            <div
+                class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-rose-400/50 shadow-lg"
+            >
+                <Image
+                    src={profilePic}
+                    alt="Andhika Hutama"
+                    width={192}
+                    height={192}
+                    class="object-cover w-full h-full"
+                />
+            </div>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+            Hi, I'm <span class="text-rose-400">Andhika</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+            Another developer who turns <span
+                class="text-rose-400 font-semibold">caffeine into code</span
+            >, and occasionally into new, exciting bugs.
+        </p>
+
+        <p class="text-lg text-gray-200 mb-12 max-w-2xl mx-auto">
+            I specialize in modern web technologies and enjoy building
+            user-friendly applications that solve real-world problems.
+        </p>
+
+        <HeroButtons client:load />
+
+        <div class="mt-16 animate-bounce">
+            <svg
+                class="w-6 h-6 mx-auto text-rose-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </div>
+</section>
