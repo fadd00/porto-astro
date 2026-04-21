@@ -20,6 +20,14 @@ export default function HeroButtons() {
             >
                 View Projects
             </button>
+            <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-3 bg-transparent hover:bg-white/5 text-white rounded-lg font-medium transition-colors border border-gray-600 hover:border-gray-400 text-center"
+            >
+                Download CV
+            </a>
         </div>
     );
 }
