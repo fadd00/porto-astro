@@ -2,6 +2,12 @@ import type { APIRoute } from 'astro';
 import { db } from '../../lib/db';
 
 export const GET: APIRoute = async () => {
+    if (!db) {
+        return new Response(
+            JSON.stringify({ error: 'Database not configured.' }),
+            { status: 503, headers: { 'Content-Type': 'application/json' } }
+        );
+    }
     try {
         const { rows } = await db.execute(
             "SELECT id, name, message, createdAt FROM guestbook ORDER BY createdAt DESC;"
@@ -21,6 +27,12 @@ export const GET: APIRoute = async () => {
 };
 
 export const POST: APIRoute = async ({ request }) => {
+    if (!db) {
+        return new Response(
+            JSON.stringify({ error: 'Database not configured.' }),
+            { status: 503, headers: { 'Content-Type': 'application/json' } }
+        );
+    }
     try {
         const body = await request.json();
         const { name, message } = body;

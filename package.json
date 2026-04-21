@@ -9,10 +9,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
+    "@astrojs/cloudflare": "^13.1.10",
     "@astrojs/react": "^5.0.3",
     "@libsql/client": "^0.17.2",
     "@tailwindcss/vite": "^4.2.2",
@@ -23,6 +25,10 @@
     "react-dom": "^19.2.5",
     "resend": "^6.12.1",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.84.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }

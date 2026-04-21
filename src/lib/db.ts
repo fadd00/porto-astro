@@ -3,27 +3,17 @@ import { createClient } from '@libsql/client';
 const url = import.meta.env.TURSO_DATABASE_URL;
 const authToken = import.meta.env.TURSO_AUTH_TOKEN;
 
-// Create db client with error handling
-let db: ReturnType<typeof createClient>;
+// Create db client — null when credentials are missing (file: URLs are not supported by /web)
+let db: ReturnType<typeof createClient> | null = null;
 
-try {
-    if (!url || !authToken) {
-        console.error('Missing Turso credentials. Database features will not work.');
-        // Create a dummy client to prevent crashes
-        throw new Error('Database not configured');
+if (url && authToken) {
+    try {
+        db = createClient({ url, authToken });
+    } catch (error) {
+        console.error('Failed to initialize database client:', error);
     }
-
-    db = createClient({
-        url,
-        authToken,
-    });
-} catch (error) {
-    console.error('Failed to initialize database client:', error);
-    // Create a safe fallback - this will error on use but won't crash on import
-    db = createClient({
-        url: 'file:local.db',
-        authToken: 'dummy',
-    });
+} else {
+    console.warn('Missing TURSO_DATABASE_URL or TURSO_AUTH_TOKEN. Database features will not work.');
 }
 
 export { db };

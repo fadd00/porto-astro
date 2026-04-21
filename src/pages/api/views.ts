@@ -2,6 +2,12 @@ import type { APIRoute } from 'astro';
 import { db } from '../../lib/db';
 
 export const GET: APIRoute = async () => {
+    if (!db) {
+        return new Response(
+            JSON.stringify({ error: 'Database not configured.' }),
+            { status: 503, headers: { 'Content-Type': 'application/json' } }
+        );
+    }
     try {
         // Increment count
         await db.execute("UPDATE views SET count = count + 1 WHERE id = 1;");
